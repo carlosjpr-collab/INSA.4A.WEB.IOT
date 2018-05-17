@@ -12,7 +12,8 @@ security:
 
     firewalls:
         main:
-            pattern: ^/
+            pattern: ^/     #pattern: ^/est un masque d'URL. Cela signifie que toutes les URL commençant par « / »
+                            #(c'est-à-dire notre site tout entier) sont protégées par ce pare-feu.
             form_login:
                 provider: fos_userbundle
                 csrf_token_generator: security.csrf.token_manager
@@ -25,4 +26,4 @@ security:
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
-        - { path: ^/, role: ROLE_USER }  #j'ai ajoute cela
+      #  - { path: ^/, role: ROLE_USER }  #j'ai ajoute cela
